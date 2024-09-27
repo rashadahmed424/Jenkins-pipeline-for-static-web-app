@@ -34,7 +34,7 @@ pipeline {
                 script {
                     // Deploy using Docker Compose
                     def dockerCmd = "docker run -d -p 85:80 rashadahmed424/static-web-app:${new_image}"
-                    def deployServer = "ec2-user@54.235.237.230"
+                    def deployServer = "ec2-user@54.235.237.230"  # replace it with your ip of deployment server  
                     sshagent(['web-server-key']) {
                         sh """    
                         ssh -o StrictHostKeyChecking=no ${deployServer} "${dockerCmd}"
