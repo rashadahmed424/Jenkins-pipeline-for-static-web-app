@@ -24,7 +24,7 @@ this project is a pipeline to build and deploy a static web application on AWS a
 git clone https://github.com/rashadahmed424/Jenkins-pipeline-for-static-web-app/
 ```
 
-### create provider.tf file to configure AWS account and Credentials:
+### create 'provider'.tf file to configure AWS account and Credentials:
 ```bash
 echo " provider "aws" {
           region = "YOUR REGION" 
@@ -40,11 +40,11 @@ terraform init
 terraform apply
 ```
 
-### Access jenkins through publicip of created EC2 instance with port '8080' then configure credentials and sshagent in jenkins.
+### Access jenkins through Public IP of created EC2 instance with port '8080' then configure credentials and sshagent in jenkins.
 
 ### create another EC2 instance to be the deployment server and attach your public SSH key to it.
 
-### Move to ansible directory and edite IPs in inventory file with your EC2s instances.
+### Move to 'ansible' directory and edite IPs in inventory file with your EC2s instances.
 
 ### Run Anisble playbook:
 ```bash
