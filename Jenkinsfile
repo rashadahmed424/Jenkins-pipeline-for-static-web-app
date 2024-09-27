@@ -6,7 +6,7 @@ pipeline {
     agent any
 
     environment{
-       def new_image = ${BUILD_NUMBER}
+       def new_image = "${BUILD_NUMBER}"
     }
     stages {
         
