@@ -6,7 +6,7 @@ pipeline {
     agent any
 
     environment{
-        new_image = 3
+        new_image = $BUILD_NUMBER
     }
     stages {
         
