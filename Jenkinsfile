@@ -6,7 +6,7 @@ pipeline {
     agent any
 
     environment{
-       def new_image = $BUILD_NUMBER
+       def new_image = ${BUILD_NUMBER}
     }
     stages {
         
@@ -40,7 +40,7 @@ pipeline {
                     def deployServer = "ec2-user@54.235.237.230"
                     sshagent(['web-server-key']) {
                         sh """    
-                        ssh -o StrictHostKeyChecking=no "${deployServer} ${dockerCmd}"
+                        ssh -o StrictHostKeyChecking=no ${deployServer} "${dockerCmd}"
                         
                         """
                     }
