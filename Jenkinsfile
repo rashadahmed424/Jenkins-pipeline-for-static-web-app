@@ -1,16 +1,13 @@
 pipeline {
 
-    parameters {
-        booleanParam(name: 'test', defaultValue: true, description: '')
-    }
     agent any
 
     environment{
        def new_image = "${BUILD_NUMBER}"
     }
+    
     stages {
         
-
         stage("build image") {
             steps {
                 script {
