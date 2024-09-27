@@ -6,7 +6,7 @@ pipeline {
     agent any
 
     environment{
-        new_image = $BUILD_NUMBER
+       def new_image = $BUILD_NUMBER
     }
     stages {
         
@@ -37,10 +37,10 @@ pipeline {
                 script {
                     // Deploy using Docker Compose
                     def dockerCmd = "docker run -d -p 85:80 rashadahmed424/static-web-app:${new_image}"
-                    def deploy_server = "ec2-user@54.235.237.230"
+                    def deployServer = "ec2-user@54.235.237.230"
                     sshagent(['web-server-key']) {
                         sh """    
-                        ssh -o StrictHostKeyChecking=no "${deploy-server} ${dockerCmd}"
+                        ssh -o StrictHostKeyChecking=no "${deployServer} ${dockerCmd}"
                         
                         """
                     }
