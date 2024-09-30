@@ -30,7 +30,7 @@ echo " provider "aws" {
           region = "YOUR REGION" 
           access_key = "YOUR ACCESS KEY"
           secret_key = "YOUR SECRET KEY"
-                      }  "
+                      }  " >> Jenkins-pipeline-for-static-web-app/provider.tf
 ```
 
 ### Move to terraform directory and initialize terraform then apply files and confirm it:
